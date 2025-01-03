@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maths Function in Javascript</title>
+    <head>
+
+        <body>
+            <center>
+                <h1>Maths functions in Java script</h1>
+                <p>Enter a Neumber and select the Math Operation</p>
+
+                <input id="number" type="number" placeholder="Enter a number" />
+
+                <br><br>
+
+                <select id="operation">
+                    <option value="sqrt">Square Root</option>
+                    <option value="abs">Absolute Value</option>
+                    <option value="ceil">Ceiling</option>
+                    <option value="floor">Floor</option>
+                    <option value="round">Round Off</option>
+                    <option value="pow2">Power (Square)</option>
+                </select>
+
+                <br><br>
+
+                <button onclick="calculate()">Calculate</button>
+                <p id="result"></p>
+
+                <script>
+                    function calculate() {
+                        var num = parseFloat(document.getElementById
+                        ("number").value);
+                        var operation = document.getElementById("operation").value;
+
+                        if (isNaN(num)) {
+                            document.getElementById("result").innerText = "Please Enter a valid number.";
+                            return;
+                        }
+
+                        var operations = {
+                            sqrt: Math.sqrt(num),
+                            abs: Math.abs(num),
+                            ceil: Math.ceil(num),
+                            floor: Math.floor(num),
+                            round: Math.round(num),
+                            pow2: Math.pow(num, 2)
+                        };
+
+                        
+                        document.getElementById("result").innerText = `Result: ${operations[operation]}`;
+                    }
+                </script>
+            </center>
+        </body>
+    </head>
+</html>
